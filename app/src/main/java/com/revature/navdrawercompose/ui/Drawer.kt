@@ -17,7 +17,6 @@ import com.revature.navdrawercompose.ui.theme.NavDrawerComposeTheme
 
 @Composable
 fun Drawer(
-
     modifier: Modifier = Modifier,
     onDestinationClicked:(route:String) -> Unit
     ) {
@@ -25,13 +24,12 @@ fun Drawer(
         Column(
             modifier
                 .fillMaxSize()
-                .padding(start = 24.dp, top = 14.dp)
+                .padding(start = 24.dp, top = 48.dp)
         ) {
 
             Image(
-                painter = painterResource(id = R.drawable.gerbil2),
+                painter = painterResource(id = R.drawable.rose),
                 contentDescription = "menu icon",
-                modifier.fillMaxSize()
             )
             Spacer(Modifier.height(24.dp))
 
@@ -39,10 +37,10 @@ fun Drawer(
 
                 Spacer(Modifier.height(24.dp))
                 Text(
-                    text = "Screen Title",
+                    text = screen.title,
                     style = MaterialTheme.typography.h4,
                     modifier = Modifier
-                        .clickable {  }
+                        .clickable { onDestinationClicked(screen.route) }
                 )
 
             }

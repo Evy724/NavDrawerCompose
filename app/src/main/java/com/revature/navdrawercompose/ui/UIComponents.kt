@@ -10,8 +10,12 @@ fun TopBar(title:String, buttonIcon: ImageVector,onButtonClicked:()->Unit)
     TopAppBar(
         title = { Text(text = title) },
         backgroundColor = MaterialTheme.colors.primaryVariant,
-        navigationIcon={ IconButton(onClick = { onButtonClicked() }) {
+        navigationIcon = {
+
+            IconButton(onClick = { onButtonClicked() }) {
+
             Icon(buttonIcon,contentDescription = "")
+
         }}
     )
 }

@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 
 @Composable
-fun Home(navController: NavController) {
+fun Home(openDrawer: () -> Unit) {
 
     Column(
         modifier = Modifier.fillMaxSize()
@@ -21,7 +21,7 @@ fun Home(navController: NavController) {
         TopBar(
             title = "Home", 
             buttonIcon = Icons.Filled.Menu,
-            onButtonClicked = {  }
+            onButtonClicked = { openDrawer() }
         )
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -37,7 +37,7 @@ fun Home(navController: NavController) {
 }
 
 @Composable
-fun Account(openDrawer:() -> Unit) {
+fun Account(openDrawer: () -> Unit) {
 
     Column(
         modifier = Modifier.fillMaxSize()
@@ -62,7 +62,7 @@ fun Account(openDrawer:() -> Unit) {
 }
 
 @Composable
-fun Help(openDrawer:() -> Unit) {
+fun Help(navController: NavController) {
 
     Column(
         modifier = Modifier.fillMaxSize()
@@ -71,7 +71,7 @@ fun Help(openDrawer:() -> Unit) {
         TopBar(
             title = "Help",
             buttonIcon = Icons.Filled.Menu,
-            onButtonClicked = {  }
+            onButtonClicked = { navController.popBackStack() }
         )
         Column(
             modifier = Modifier.fillMaxSize(),
