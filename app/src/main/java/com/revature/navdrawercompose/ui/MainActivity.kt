@@ -42,7 +42,9 @@ fun AppMainScreen() {
         val drawerState = rememberDrawerState(DrawerValue.Closed)
         val scope = rememberCoroutineScope() //coroutines
         val openDrawer = {
+
             scope.launch {
+
                 drawerState.open()
 
             }
